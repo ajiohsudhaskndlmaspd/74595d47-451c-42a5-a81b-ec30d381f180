@@ -38,7 +38,7 @@ jobs:
               
             })
             console.log(a)
-            `/
+            */
             response = await github.request(
                 `GET /repos/${context.repo.owner}/${context.repo.repo}/git/ref/tags/test`, 
                 {
@@ -47,5 +47,6 @@ jobs:
                   ref: `refs/tags/test`
                 }
               )
+            console.log(response)
           result-encoding: string
       
