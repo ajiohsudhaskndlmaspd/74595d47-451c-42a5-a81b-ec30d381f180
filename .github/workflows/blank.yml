@@ -28,6 +28,7 @@ jobs:
       - uses: actions/github-script@v6
         id: set-result
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const a = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/refs`, {
               owner: context.repo.owner,
