@@ -29,7 +29,7 @@ jobs:
         id: set-result
         with:
           script: |
-            await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/tags`, {
+            const a = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/tags`, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag: 'v0.0.1',
@@ -42,5 +42,6 @@ jobs:
                 date: '2011-06-17T14:53:35-07:00'
               }
             })
+            console.log(a)
           result-encoding: string
       
