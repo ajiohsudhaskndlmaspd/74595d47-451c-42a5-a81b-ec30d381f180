@@ -34,7 +34,7 @@ jobs:
               repo: context.repo.repo,
               tag: 'v0.0.1',
               message: 'initial version',
-              object: '632295ca2de215a77c602e42384b5f6d47f9eb94',
+              object: context.sha,
               type: 'commit',
               tagger: {
                 name: 'Monalisa Octocat',
