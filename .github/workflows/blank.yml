@@ -29,18 +29,12 @@ jobs:
         id: set-result
         with:
           script: |
-            const a = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/tags`, {
+            const a = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/refs`, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              tag: 'v0.0.1',
-              message: 'initial version',
-              object: context.sha,
-              type: 'commit',
-              tagger: {
-                name: 'Monalisa Octocat',
-                email: 'octocat@github.com',
-                date: '2011-06-17T14:53:35-07:00'
-              }
+              ref: 'refs/heads/test'
+              sha: context.sha,
+              
             })
             console.log(a)
           result-encoding: string
