@@ -30,7 +30,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const a = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/refs`, {
+            /*const a = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/refs`, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: 'refs/tags/test',
@@ -38,5 +38,14 @@ jobs:
               
             })
             console.log(a)
+            `/
+            response = await github.request(
+                `GET /repos/${context.repo.owner}/${context.repo.repo}/git/ref/tags/test`, 
+                {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `refs/tags/test`
+                }
+              )
           result-encoding: string
       
