@@ -32,7 +32,7 @@ jobs:
             const a = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/git/refs`, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/heads/test',
+              ref: 'refs/tags/test',
               sha: context.sha,
               
             })
